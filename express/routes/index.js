@@ -12,12 +12,14 @@ router.get('/helloworld', function(req, res) {
 });
 
 /* GET Userlist page. */
-router.get('/trainingdata', function(req, res) {
+router.get('/dailylist', function(req, res) {
     var db = req.db;
-    var collection = db.get('usercollection');
+    var collection = db.get('dailycollection');
     collection.find({},{},function(e,docs){
-        res.render('trainingdata', {
-            "trainingdata" : docs
+        res.render('dailylist', {
+            "dailylist" : [
+                {"date":"123"}
+            ]
         });
     });
 });

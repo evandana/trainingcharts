@@ -1,0 +1,8 @@
+extends layout
+
+block content
+    h1.
+        Day List
+    ul
+        each day, i in dailylist
+            li #{day.date}
